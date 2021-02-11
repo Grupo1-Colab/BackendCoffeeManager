@@ -7,7 +7,12 @@ Recordar:
 virtualenv env --python=python3
 ~~~
 - Tener instalado, previamente, __virtualenv__ y el _intérprete de python (versión 3.6^)_.
-- Iniciar el entorno virtual, y trabajar desde allí.
+- Iniciar el entorno virtual, y trabajar desde allí:
+~~~
+source env/bin/activate
+
+deactivate   (para desactivar)
+~~~
 - Si desdea trabajar con los paquetes de este entorno virtual, instale paquetes desde 'requirements.txt' usando el comando:
 ~~~
 pip install --upgrade -r requirements.txt
