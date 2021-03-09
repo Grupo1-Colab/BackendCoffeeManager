@@ -3,4 +3,5 @@
 #Paquetes Python y entorno virtual
 /env
 /.vscode
+*.pyc
 #Si desdea trabajar con los paquetes de este entorno virtual, instale paquetes desde 'requirements.txt' usando el comando -> pip install --upgrade -r requirements.txt
