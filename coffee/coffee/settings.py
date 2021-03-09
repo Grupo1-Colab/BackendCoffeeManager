@@ -27,8 +27,9 @@ SECRET_KEY = '*fb9f+%o45$$+4rews5bz4ac_cvq1868q@(rwy*9&)zr@+kqxx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.0.13']
 
+AUTH_USER_MODEL = 'Usuarios.Usuario'
 
 # Application definition
 
@@ -111,8 +112,12 @@ REST_FRAMEWORK ={
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'coffeemanager',
+        'USER': 'ricardo',
+        'PASSWORD': 'johnlennon09',
+        'HOST': '192.168.0.13',
+        'PORT': '3306',
     }
 }
 
