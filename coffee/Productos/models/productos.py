@@ -18,5 +18,5 @@ class Producto (models.Model):
     precio = models.FloatField()
     estado = models.IntegerField(choices=ESTADO, default=ACTIVO)
     createdAt = models.DateTimeField(auto_now=True)
-    categoria = models.ForeignKey('Categorias.Categorias', on_delete=models.DO_NOTHING)
+    categoria = models.IntegerField()
     

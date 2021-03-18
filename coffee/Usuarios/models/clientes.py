@@ -4,10 +4,18 @@ class Cliente (models.Model):
     '''
         La clase Cliente también hereda de AbstractUser, para poder crear a un usuario.
     '''
-    #Constante para el CLiente
-    CLIENTE = 1
     
     #Campos
+    first_name = models.CharField(
+        'primerNombre',
+        max_length = 50
+    )
+    
+    last_name = models.CharField(
+        'apellido',
+        max_length = 50
+    )
+    
     username = models.CharField(
         'username',
         max_length = 50,
@@ -16,7 +24,6 @@ class Cliente (models.Model):
             'unique' : 'Ya existe un usuario con este nombre de usuario.'
         }
     )
-    USERNAME_FIELD = 'username'
     
     email = models.EmailField(
         'email_address',
@@ -25,7 +32,6 @@ class Cliente (models.Model):
             'unique' : 'Ya existe un usuario con este correo.'
         }
     )
-    tipo = models.IntegerField(default=CLIENTE)
     is_verified = models.BooleanField(
         'cliente',
         default=True
@@ -58,6 +64,7 @@ class PerfilNit (Inicio):
         y solamente se liga a un Cliente en específico.
     '''
     cliente = models.OneToOneField(Cliente, on_delete=models.CASCADE)
+    numNit = models.IntegerField()
     
     def __str__(self):
         return str(self.cliente)
